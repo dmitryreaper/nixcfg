@@ -14,7 +14,6 @@
     
     bashrcExtra = ''
       xset r rate 300 100
-      setxkbmap -option "ctrl:swapcaps" && setxkbmap -layout us,ru && setxkbmap -option 'grp:alt_shift_toggle'
     '';
   };
 }
