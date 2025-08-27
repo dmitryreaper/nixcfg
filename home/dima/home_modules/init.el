@@ -49,9 +49,7 @@
 
 ;; font
 ;; Если шрифт установлен через Nix, Emacs найдет его
-(set-face-attribute 'default nil :font "Hack Nerd Font-12")
-(when (display-graphic-p)
-  (set-face-attribute 'default nil :font "Hack Nerd Font-12" :height 120))
+(set-face-attribute 'default nil :font "Hack Nerd Font-11")
 
 ;; set "gnu" style for c
 (setq c-default-style "gnu"
@@ -137,9 +135,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Theme gruber-darker
-(use-package gruber-darker-theme
+(use-package doom-themes
+  :ensure t
   :config
-  (load-theme 'gruber-darker t))
+  (load-theme 'doom-molokai))
 
 (use-package projectile
   :init
@@ -297,10 +296,6 @@
 ;; outside of the Nix store, if you intend to modify them dynamically.
 ;; For static configuration, you can leave them here.
 (custom-set-variables
- '(custom-enabled-themes '(gruber-darker))
- '(custom-safe-themes
-   '("014cb63097fc7dbda3edf53eb09802237961cbb4c9e9abd705f23b86511b0a69"
-     default))
  ;; package-selected-packages should not be here, as Nix manages them
  '(warning-suppress-log-types '((native-compiler))))
 
@@ -314,4 +309,3 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
-(setq standard-indent 2)
